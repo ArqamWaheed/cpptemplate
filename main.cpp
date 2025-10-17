@@ -2,33 +2,14 @@
 using namespace std;
 
 int main() {
-    int num;
+    int n;
     cout << "Input: ";
-    cin >> num;
+    cin >> n;
     
-    int reversed = 0;
-    for (int temp = num; temp != 0; temp /= 10) {
-        reversed = reversed * 10 + temp % 10;
+    cout << "Output:" << endl;
+    
+    for (int i = 1; i <= 10; i++) {
+        cout << n << " x " << i << " = " << n * i << endl;
     }
-    
-    cout << "Output: ";
-    
-    for (; reversed != 0; reversed /= 10) {
-        int digit = reversed % 10;
-        switch (digit) {
-            case 0: cout << "Zero "; break;
-            case 1: cout << "One "; break;
-            case 2: cout << "Two "; break;
-            case 3: cout << "Three "; break;
-            case 4: cout << "Four "; break;
-            case 5: cout << "Five "; break;
-            case 6: cout << "Six "; break;
-            case 7: cout << "Seven "; break;
-            case 8: cout << "Eight "; break;
-            case 9: cout << "Nine "; break;
-        }
-    }
-    
-    cout << endl;
 }
 
