@@ -2,9 +2,13 @@
 using namespace std;
 
 int main() {
-    for (int i; i <= 300000000; i++) {
-        if (i%100000000 == 0) {
-            cout << "Multiple is " << i/100000000 << endl;
-        }
+    int number, factorial;
+    factorial = 1;
+    cout << "Enter a number you want to factorial: ";
+    cin >> number;
+    
+    for (int i = number; i > 0; i--) {
+        factorial *= i;
     }
+    cout << factorial;
 }
