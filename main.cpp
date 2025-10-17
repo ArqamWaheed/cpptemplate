@@ -2,22 +2,33 @@
 using namespace std;
 
 int main() {
-    int rows = 5;
-    int numToPrint = 1;
-    for (int i = 0; i < rows; i++) {
-        int spaces = rows - i - 1;
-        for (int j = 0; j < spaces; j++) {
-            cout << " ";
-        }
-        int centreNum = (numToPrint / 2) + 1;
-        for (int k = 1; k <= centreNum; k++) {
-            cout << k;
-        }
-        for (int k = centreNum - 1; k > 0; k--) {
-            cout << k;
-        }
-        cout << "\n";
-        numToPrint += 2;
+    int num;
+    cout << "Input: ";
+    cin >> num;
+    
+    int reversed = 0;
+    for (int temp = num; temp != 0; temp /= 10) {
+        reversed = reversed * 10 + temp % 10;
     }
+    
+    cout << "Output: ";
+    
+    for (; reversed != 0; reversed /= 10) {
+        int digit = reversed % 10;
+        switch (digit) {
+            case 0: cout << "Zero "; break;
+            case 1: cout << "One "; break;
+            case 2: cout << "Two "; break;
+            case 3: cout << "Three "; break;
+            case 4: cout << "Four "; break;
+            case 5: cout << "Five "; break;
+            case 6: cout << "Six "; break;
+            case 7: cout << "Seven "; break;
+            case 8: cout << "Eight "; break;
+            case 9: cout << "Nine "; break;
+        }
+    }
+    
+    cout << endl;
 }
 
