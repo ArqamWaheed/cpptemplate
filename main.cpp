@@ -1,35 +1,38 @@
 #include <iostream>
+#include <cctype>
 using namespace std;
 
 int main() {
-    int numbers[20];
-    int count = 0;
+    char arr[10];
+    int lowercase = 0;
+    int uppercase = 0;
+    int digit = 0;
+    int special = 0;
     
-    cout << "Enter 20 integers between 10 and 100:" << endl;
-    for (int i = 0; i < 20; i++) {
-        int num;
-        cin >> num;
-        
-        bool isDuplicate = false;
-        for (int j = 0; j < count; j++) {
-            if (numbers[j] == num) {
-                isDuplicate = true;
-                break;
-            }
+    cout << "Enter 10 characters (mix of lower, upper, digit, special):" << endl;
+    for (int i = 0; i < 10; i++) {
+        cin >> arr[i];
+    }
+    
+    for (int i = 0; i < 10; i++) {
+        if (islower(arr[i])) {
+            lowercase++;
         }
-        
-        if (!isDuplicate) {
-            numbers[count] = num;
-            count++;
+        else if (isupper(arr[i])) {
+            uppercase++;
+        }
+        else if (isdigit(arr[i])) {
+            digit++;
+        }
+        else {
+            special++;
         }
     }
     
-    cout << endl;
-    cout << "The nonduplicate values are:" << endl;
-    for (int i = 0; i < count; i++) {
-        cout << numbers[i] << " ";
-    }
-    cout << endl;
+    cout << "Lower case = " << lowercase << endl;
+    cout << "Upper case = " << uppercase << endl;
+    cout << "Digit = " << digit << endl;
+    cout << "Special characters = " << special << endl;
     
     return 0;
 }
